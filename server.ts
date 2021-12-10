@@ -10,7 +10,6 @@ import { getCities } from './server/routes/cities.routes';
 
 const env = process.argv?.includes( '--production' ) ? getEnvironment( 'prod' ) : getEnvironment();
 const ANGULAR_DIST_FILES = env?.ANGULAR_DIST_FILES;
-const STORAGE_DEST = './uploaded-files';
 const PORT = env.PORT || 8081;
 const PREFIX = '/api';
 
@@ -19,7 +18,7 @@ const PREFIX = '/api';
 const apiRoutesNotAuth: Router = Router();
 
 
-// * Partners routes
+// * Cities routes
 apiRoutesNotAuth.route( PREFIX + '/cities' ).get( getCities );
 
 
@@ -35,7 +34,6 @@ apiRoutesNotAuth.route( '/*' ).get( ( req, res ) =>
 const expressApp = express();
 
 expressApp.use( express.static( ANGULAR_DIST_FILES.path ) );
-expressApp.use( '/' + STORAGE_DEST, express.static( STORAGE_DEST ) );
 expressApp.use( express.json() );
 expressApp.use( express.urlencoded( { limit: '200mb', extended: true } ) );
 
