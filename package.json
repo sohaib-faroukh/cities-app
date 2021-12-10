@@ -17,7 +17,8 @@
 		"test:server": "jasmine test",
 		"lint": "ng lint",
 		"e2e": "ng e2e",
-		"build": "npm-run-all ng-build build-server"
+		"build": "npm-run-all ng-build build-server",
+		"build-run": " run-s build start"
 	},
 	"private": true,
 	"dependencies": {

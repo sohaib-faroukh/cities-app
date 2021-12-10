@@ -17,6 +17,9 @@ Run `ng serve`
 ### run tests
 Run `npm run test:client` 
 
+## build & run in one short command
+Run `npm run build-run`
+
 ## Docker image
 build image `docker build --tag node-angular-img . `
 run container for port 80 `docker run -p 80:8080 --name nnn  node-angular-img`
