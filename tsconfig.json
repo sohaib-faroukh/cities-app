@@ -1,0 +1,39 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "./dist",
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"sourceMap": true,
+		"declaration": false,
+		"downlevelIteration": true,
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"target": "es2015",
+		"module": "commonjs",
+		"lib": [
+			"es2019",
+			"dom"
+		],
+		"resolveJsonModule": true
+	},
+	"include": [
+		"*.ts",
+		"*.json"
+	],
+	"angularCompilerOptions": {
+		"enableI18nLegacyMessageIdFormat": false,
+		"strictInjectionParameters": true,
+		"strictInputAccessModifiers": true,
+		"strictTemplates": true,
+		"fullTemplateTypeCheck": true,
+	},
+	"exclude": [
+		"node_modules",
+		".vscode"
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"restratable": "rs",
+	"ext": "ts",
+	"watch": [
+		"server/**/*",
+		"models/**/*",
+		"utils/**/*",
+		"server.ts",
+		"credentials.ts"
+	],
+	"ignore": [
+		".git",
+		"node_modules/**"
+	],
+	"exec": "npm run server"
+}

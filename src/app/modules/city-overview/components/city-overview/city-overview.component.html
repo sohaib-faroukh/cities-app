@@ -1,0 +1,74 @@
+<style>
+	.custom-card {
+		min-width: 17rem;
+		width: 28vw;
+		height: 22rem;
+		overflow-y: auto;
+	}
+
+	.w-6rem {
+		width: 6rem;
+	}
+
+	.normal-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	table td,
+	table th {
+		padding: 0.2rem;
+	}
+</style>
+<mat-card class="ml-2 custom-card shadow border">
+
+	<ng-container *ngIf="city;else noCityMessageRef">
+		<mat-card-header>
+			<mat-card-title>{{city?.name}},&nbsp;{{city?.country}}</mat-card-title>
+			<mat-card-subtitle>{{city?.name_native}}</mat-card-subtitle>
+		</mat-card-header>
+		<mat-card-content>
+			<table>
+				<tr>
+					<th class="w-6rem text-capitalize">country</th>
+					<td>{{city?.country}}</td>
+				</tr>
+
+				<tr>
+					<th class="w-6rem text-capitalize">continent</th>
+					<td>{{city?.continent}}</td>
+				</tr>
+
+				<tr>
+					<th class="w-6rem text-capitalize">founded</th>
+					<td>{{city?.founded}}</td>
+				</tr>
+				<tr>
+					<th class="w-6rem text-capitalize">population</th>
+					<td>{{(city?.population||0)|formatBigNumber}}</td>
+				</tr>
+				<tr>
+					<th class="w-6rem text-capitalize" style="vertical-align: text-top;">landmarks</th>
+					<td>
+						<ul class="normal-list" *ngIf="(city?.landmarks||[]).length>0">
+							<li *ngFor="let landmark of (city?.landmarks||[])">
+								{{landmark}}
+							</li>
+						</ul>
+					</td>
+				</tr>
+
+
+			</table>
+
+		</mat-card-content>
+	</ng-container>
+</mat-card>
+
+<ng-template #noCityMessageRef>
+	<div class="container">
+		<div class="row">
+			<span class="text-gray m-auto">No city data is provided</span>
+		</div>
+	</div>
+</ng-template>
