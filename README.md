@@ -6,10 +6,13 @@
 Run `npm install` and please use a reliable VPN if you are in Syria
 
 ### run the app locally 
-#### run Frontend 
-Run `ng serve` 
+
 #### run Backend
 Run `npm run start:dev` 
+
+#### run Frontend 
+Run `ng serve` 
+
 
 ### run tests
 Run `npm run test:client` 
